@@ -1,0 +1,26 @@
+## Tiron Teodor 314CA
+
+Observație: Tema nu rulează corespunzător pe vmchecker din cauza restricțiilor
+de timp setate. La execuția checkerului normal, tema obține punctajul maxim
+însă durează foarte mult verificarea de valgrind (în total peste 15 minute).
+Am încercat mai multe soluții de alocare a memoriei în program însă timpul
+de execuție nu a fost afectat în mod semnificativ.
+
+1.	Pentru a stoca harta, am citit fiecare valoare ca un șir de caractere
+de lungime 8, pe care l-am desfăcut în 4 șiruri de lungime 2. Am convertit
+șirurile de lungime 2 în valori signed char pe care le-am pus în matrice.
+Pentru a calcula puterea scutului, am adunat toate valorile de pe prima și
+ultima linie și prima și ultima valoare de pe restul liniilor și am împărțit
+la numărul valorilor găsite.
+
+2.	Am implementat cele trei operații astfel: modify verifică dacă am
+spațiu suficient pe linie, dacă nu realocă spațiul necesar și completează cu 0.
+Valorile sunt modificate după același principiu ca la citire (desfacere în 4
+octeți); delete și swap parcurg linia la care se face operația și efectuează
+modificăriile necesare.
+
+3.	Am folosit o funcție recursivă pe care o apelez de câte ori găsesc
+o valoare de 0 în matrice și care numără valoarea găsită, pe care o marchează
+cu -1 pentru a nu fi numărată de mai multe ori, apoi verifică dacă există
+valori în direcțiile sus, jos, stânga și dreapta. Dacă pe o direcție există
+o valoare și aceasta este 0, funcția se apelează pe poziția respectivă.

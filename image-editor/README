@@ -1,0 +1,12 @@
+## Tiron Teodor 314CA
+
+Pentru a stoca informații despre imagine (tipul de imagine, dimensiunile și
+valoarea maximă), am folosit structura metadata_t. Pentru a reține informații
+despre un pixel color, am folosit structura pixel_t. Atât pentru imaginile
+color cât și pentru cele grayscale, am folosit o matrice de pixel_t. În cazul
+imaginilor grayscale, am setat toate canalele de culoare cu aceeași valoare.
+
+Pentru citirea comenzilor am folosit fgets, apoi am folosit strtok pe comanda
+obținută pentru a scoate primul cuvânt. În cazul în care nicio imagine nu a
+fost încărcată (valoarea tipului de imagine este 0), se ignoră comanda (cu
+excepția comenzilor EXIT și LOAD) și se afișează mesajul de eroare adecvat.
